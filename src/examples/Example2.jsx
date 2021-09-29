@@ -12,6 +12,7 @@ export class MyComponent extends Component {
         return (
             <div>
                 <p>This component has a child component!</p>
+                {/* Components can be used by other components in JSX */}
                 <Label label="Workshop Name" text="React" />
             </div>
         )
