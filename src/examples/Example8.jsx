@@ -3,7 +3,7 @@
  * 
  * Hooks
  */
-import { Component, useState } from 'react'
+import { Component, useState, useMemo } from 'react'
 
 /**
  * Displays a video component that allows adjustment of a video
@@ -23,9 +23,12 @@ function MyVideo({ title }) {
         backgroundColor: '#a83236',
     }
 
-    let ratio = likes + disLikes > 0
-        ? Math.round((likes / (likes + disLikes)) * 100)
-        : "No Ratings"
+    let ratio = useMemo(
+        () => likes + disLikes > 0
+            ? Math.round((likes / (likes + disLikes)) * 100)
+            : "No Ratings",
+        [likes, disLikes]
+    )
 
     return (
         <div style={{ padding: 10 }}>

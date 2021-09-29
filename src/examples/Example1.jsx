@@ -24,3 +24,15 @@ export function MyFirstFunctionComponent() {
     return <p>Hello, World!</p>
 }
 
+/*
+In your index file, you would have
+ReactDOM.render(
+    <MyFirstComponent />,
+    document.getElementById('root')
+)
+ReactDOM.render(
+    <MyFirstFunctionComponent />,
+    document.getElementById('root')
+)
+*/
+

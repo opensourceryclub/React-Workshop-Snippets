@@ -44,8 +44,9 @@ export class MyVideo extends Component {
 
         let likeCount = this.state.likes
         let dislikeCount = this.state.dislikes
-        let ratio = (likeCount / (likeCount + dislikeCount))
-        ratio = likeCount + dislikeCount > 0 ? Math.round(ratio * 100) : 'No Ratings'
+        let ratio = likeCount + dislikeCount > 0
+            ? Math.round((likeCount / (likeCount + dislikeCount)) * 100)
+            : 0
 
         return (
             <div style={{ padding: 10 }}>
@@ -54,10 +55,13 @@ export class MyVideo extends Component {
                 <h1>{this.props.title}</h1>
                 <p>Likes: {this.state.likes}</p>
                 <p>Dislikes: {this.state.dislikes}</p>
-                <p>Ratio: {ratio} % liked</p>
+                {ratio > 0
+                    ? <p>Ratio: {ratio} % liked</p>
+                    : <p>Ratio: No Ratings</p>
+                }
 
-                <div onClick={this.like}> Like! </div>
-                <div onClick={this.dislike}> Hate! </div>
+                <div onClick={this.like} role="button"> Like! </div>
+                <div onClick={this.dislike} role="button"> Hate! </div>
 
             </div>
         )

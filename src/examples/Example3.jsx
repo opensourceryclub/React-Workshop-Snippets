@@ -6,7 +6,7 @@
 
 import { Component } from "react";
 
-function ChildComponent(props) {
+function NestedComponent(props) {
     return (
         <div>
             <p>This component has children!</p>
@@ -23,10 +23,10 @@ function ChildComponent(props) {
 export class ParentComponent extends Component {
     render() {
         return (
-            <ChildComponent>
+            <NestedComponent>
                 <p>This is a child component</p>
                 <p>This is too</p>
-            </ChildComponent>
+            </NestedComponent>
         )
     }
 }

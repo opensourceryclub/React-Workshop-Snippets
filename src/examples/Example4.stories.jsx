@@ -8,5 +8,6 @@ export default {
 
 export const RedShoppingList = args => <ShoppingList {...args} />
 RedShoppingList.args = {
-    color: 'red'
+    evenColor: 'red',
+    oddColor: 'blue'
 }
