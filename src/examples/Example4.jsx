@@ -11,7 +11,8 @@ export class MyCounter extends Component {
         this.state = { numClicks: 0 }
     }
 
-    // Event handler that is called whenever the button is clicked
+    // Event handler that is called whenever the button is clicked.
+    // This will fail if we don't use arrow functions. Can you think of why?
     handleClick = () => {
         this.setState({ numClicks: this.state.numClicks + 1 })
     }
