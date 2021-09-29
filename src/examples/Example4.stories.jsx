@@ -1,9 +1,12 @@
-import React from 'react';
-import { MyCounter } from './Example4'
+import React from 'react'
+import { ShoppingList } from './Example4'
 
 export default {
-    component: MyCounter,
-    title: 'Examples/Example 4: Using State'
+    component: ShoppingList,
+    title: 'Examples/Example 4: Rendering Lists'
 }
 
-export const Counter = () => <MyCounter />
+export const RedShoppingList = args => <ShoppingList {...args} />
+RedShoppingList.args = {
+    color: 'red'
+}
